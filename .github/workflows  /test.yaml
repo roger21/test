@@ -1,4 +1,4 @@
-name: update_smileys_workflow
+name: test
 
 run-name: 'run #${{ github.run_number }} on ${{ github.event_name }}'
 
