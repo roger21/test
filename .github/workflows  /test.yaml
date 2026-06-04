@@ -28,5 +28,5 @@ jobs:
       - name: php version
         run: php -v
 
-      - name: let's go
+      - name: test test
         run: ./test.php
