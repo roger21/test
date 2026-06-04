@@ -1,0 +1,32 @@
+name: update_smileys_workflow
+
+run-name: 'run #${{ github.run_number }} on ${{ github.event_name }}'
+
+on:
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+        with:
+          ref: 'main'
+          fetch-depth: '0'
+
+      - name: get php 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: php version
+        run: php -v
+
+      - name: let's go
+        run: ./test.php
